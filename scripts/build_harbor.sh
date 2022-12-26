@@ -7,7 +7,7 @@ docker buildx build -f Dockerfile_github \
 	-t oci.tuxm.art:8443/tusdesign/jeepay-ui-payment:latest \
     --build-arg USER=${GITHUB_USER} \
     --build-arg TOKEN=${GITHUB_TOKEN} \
-    --build-arg PLATFORM=payment \
+    --build-arg PLATFORM=cashier \
     --build-arg BUILD_TIME=${BUILD_TIME} \
     --build-arg VERSION=${VERSION} \
     --build-arg COMMIT_SHA=${COMMIT_SHA} .
