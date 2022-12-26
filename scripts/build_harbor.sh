@@ -27,7 +27,7 @@ docker buildx build -f Dockerfile_github \
  --build-arg COMMIT_SHA=${COMMIT_SHA} .
 
 docker login oci.tuxm.art:8443 --username ${HARBOR_USER} --password ${HARBOR_PASS}
-docker push jeepay-ui-payment:latest
-docker push jeepay-ui-manager:latest
-docker push jeepay-ui-merchant:latest
+docker push oci.tuxm.art:8443/tusdesign/jeepay-ui-payment:latest
+docker push oci.tuxm.art:8443/tusdesign/jeepay-ui-manager:latest
+docker push oci.tuxm.art:8443/tusdesign/jeepay-ui-merchant:latest
 
