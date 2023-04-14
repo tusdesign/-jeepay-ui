@@ -20,6 +20,7 @@
             <jeepay-text-up :placeholder="'商户号'" :msg="searchData.mchNo" v-model="searchData.mchNo" />
             <jeepay-text-up :placeholder="'服务商号'" :msg="searchData.isvNo" v-model="searchData.isvNo" />
             <jeepay-text-up :placeholder="'应用AppId'" :msg="searchData.appId" v-model="searchData.appId"/>
+            <jeepay-text-up :placeholder="'业务Id'" :msg="searchData.businessId" v-model="searchData.businessId"/>
             <a-form-item v-if="$access('ENT_PAY_ORDER_SEARCH_PAY_WAY')" label="" class="table-head-layout">
               <a-select v-model="searchData.wayCode" placeholder="支付方式" default-value="">
                 <a-select-option value="">全部</a-select-option>
@@ -59,6 +60,7 @@
             <span class="table-page-search-submitButtons">
               <a-button type="primary" icon="search" @click="queryFunc" :loading="btnLoading">搜索</a-button>
               <a-button style="margin-left: 8px" icon="reload" @click="() => this.searchData = {}">重置</a-button>
+              <!-- <a-button style="margin-left: 8px" type="primary" icon="download" >导出</a-button> -->
             </span>
           </div>
         </a-form>
