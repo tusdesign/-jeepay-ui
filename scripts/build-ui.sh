@@ -1,5 +1,13 @@
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
+if [ "$HARBOR_URL" = "" ]; then
+    HARBOR_URL="oci.tuxm.art:8443"
+fi
+
+if [ "$TAG" = "" ]; then
+    TAG="latest"
+fi
+
 docker buildx build . --build-arg PLATFORM=cashier -t jeepay-ui-cashier:$TAG
 docker buildx build . --build-arg PLATFORM=manager -t jeepay-ui-manager:$TAG
 docker buildx build . --build-arg PLATFORM=merchant -t jeepay-ui-merchant:$TAG
